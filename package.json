@@ -3,13 +3,17 @@
   "private": true,
   "version": "0.0.0",
   "main": "dist-electron/index.js",
+  "author": {
+    "name": "lilili"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && rimraf dist && vite build && electron-builder",
     "preview": "vite preview",
-    "build:electron": "electron-builder --win --x64"
+    "build:win": "electron-builder --win --x64"
   },
   "dependencies": {
+    "axios": "^0.24.0",
     "vite-plugin-electron-renderer": "^0.12.1",
     "vue": "^3.2.45"
   },
@@ -36,7 +40,7 @@
       "dist-electron/index.js",
       "dist-electron/preload.js",
       "build/**/*",
-      "electron/*.js"
+      "electron/*.ts"
     ],
     "mac": {
       "artifactName": "${productName}_${version}.${ext}",
