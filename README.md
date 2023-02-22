@@ -6,7 +6,7 @@ This template should help get you started developing with Vue 3 and TypeScript i
 
 git clone https://github.com/lilili-geng/vite-electron-vue3/edit/master
 
-yarn || yarn add 
+拉取依赖 yarn || yarn add 
 
 开发环境 yarn run dev
 根据电脑打包 yarn run build 
