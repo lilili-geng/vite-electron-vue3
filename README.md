@@ -13,3 +13,7 @@ git clone https://github.com/lilili-geng/vite-electron-vue3/edit/master
 根据电脑环境打包 yarn run build 
 
 window打包 yarn run build:win
+
+其余配置通过electron-builder查看https://www.electron.build/
+
+
