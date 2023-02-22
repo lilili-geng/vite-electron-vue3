@@ -9,5 +9,7 @@ git clone https://github.com/lilili-geng/vite-electron-vue3/edit/master
 拉取依赖 yarn || yarn add 
 
 开发环境 yarn run dev
-根据电脑打包 yarn run build 
+
+根据电脑环境打包 yarn run build 
+
 window打包 yarn run build:win
