@@ -13,7 +13,6 @@
     "build:win": "electron-builder --win --x64"
   },
   "dependencies": {
-    "axios": "^0.24.0",
     "vite-plugin-electron-renderer": "^0.12.1",
     "vue": "^3.2.45"
   },
