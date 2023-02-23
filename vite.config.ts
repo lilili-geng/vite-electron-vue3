@@ -26,9 +26,10 @@ export default defineConfig({
   base: "./", // 加入这行就可以了
   server: {
     proxy: {
-      "/abc": {
+      "/dev": {
         target: "http://42.194.185.3:8087", // 自己请求地址, 注意要换哦
         changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/dev/, ""),
       },
     },
   },

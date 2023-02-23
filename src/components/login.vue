@@ -11,7 +11,7 @@
         </el-form-item>
         <el-form-item label-width="230px">
           <el-button type="primary" @click="onSubmit">Query</el-button>
-        </el-form-item>
+        </el-form-item> 
       </el-form>
     </div>
   </div>
@@ -26,11 +26,14 @@ const formInline = reactive<any>({
 });
 
 const onSubmit = () => {
-  console.log(formInline);
   const { username, password } = formInline;
-  login({ username, password }).then((res) => {
-    console.log(res);
-  });
+  login({ username, password })
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 };
 </script>
 

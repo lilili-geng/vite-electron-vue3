@@ -1,5 +1,4 @@
 import axios from "axios";
-// import {getToken} from '@/stores/user'
 import { ElMessage, ElLoading } from "element-plus";
 export const baseURL: string = import.meta.env.VITE_BASE_URL;
 export const timeout: number = 5000;
@@ -45,7 +44,7 @@ const service = axios.create({
 // 请求前的统一处理
 service.interceptors.request.use(
   (config) => {
-    console.log(config,"11213");
+    console.log(config);
     // if (config.loading) {
     //   loadingInstance  = ElLoading.service()
     // }\
@@ -63,7 +62,6 @@ service.interceptors.request.use(
 
 service.interceptors.response.use(
   (response) => {
-    console.log(response,"122112s");
     if (loadingInstance) {
       loadingInstance.close();
     }
