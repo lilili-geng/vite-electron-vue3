@@ -1,11 +1,11 @@
 // Modules to control application life and create native browser window
 import { app, BrowserWindow, Menu, globalShortcut } from "electron";
 const path = require("path");
-
+import { join } from "path";
+console.log(path);
 //这里的配置手动写的，也可以使用cross-env插件配置
 const mode = process.env.NODE_ENV;
 console.log("electron打印当前环境=>", mode);
-
 /*隐藏electron创听的菜单栏*/
 Menu.setApplicationMenu(null);
 
@@ -16,19 +16,7 @@ function createWindow() {
     height: 600,
     frame: true /*是否展示顶部导航  去掉关闭按钮  最大化最小化按钮*/,
     webPreferences: {
-      // preload: path.join(__dirname, function () {
-      //   window.addEventListener("DOMContentLoaded", () => {
-      //     const replaceText = (selector: any, text: string | any) => {
-      //       const element = document.getElementById(selector);
-      //       if (element) element.innerText = text;
-      //     };
-
-      //     for (const type of ["chrome", "node", "electron"]) {
-      //       // eslint-disable-next-line no-undef
-      //       replaceText(`${type}-version`, process.versions[type]);
-      //     }
-      //   })
-      // }),
+      // preload: join(__dirname, "./preload.js"),
       nodeIntegration: true,
       contextIsolation: false,
     },
@@ -52,6 +40,9 @@ function createWindow() {
   globalShortcut.register("Alt+CommandOrControl+I", () => {
     mainWindow.webContents.openDevTools();
     console.log("打开控制台 open devTools");
+  });
+  mainWindow.on('close', (event) => {
+    console.log(`窗口即将销毁`);
   });
   mainWindow.webContents.openDevTools();
 }

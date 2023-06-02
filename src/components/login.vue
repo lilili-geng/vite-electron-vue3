@@ -11,7 +11,7 @@
         </el-form-item>
         <el-form-item label-width="230px">
           <el-button type="primary" @click="onSubmit">Query</el-button>
-        </el-form-item> 
+        </el-form-item>
       </el-form>
     </div>
   </div>
@@ -19,7 +19,9 @@
 
 <script setup lang="ts">
 import { reactive } from "vue";
+import { useRouter } from "vue-router";
 import { login } from "../api/user";
+const router = useRouter();
 const formInline = reactive<any>({
   username: "13651421125",
   password: "421125",
@@ -27,13 +29,11 @@ const formInline = reactive<any>({
 
 const onSubmit = () => {
   const { username, password } = formInline;
-  login({ username, password })
-    .then((res) => {
-      console.log(res);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  login({ username, password }).then((res) => {
+    if (res.code == 200) {
+      router.push("/home");
+    }
+  });
 };
 </script>
 

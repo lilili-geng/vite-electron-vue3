@@ -9,9 +9,14 @@ import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 export default defineConfig({
   plugins: [
     vue(),
-    electron({
-      entry: "electron/index.ts", // 主进程文件
-    }),
+    electron([
+      {
+        entry: "electron/index.ts",
+      },
+      {
+        entry: "electron/preload.ts",
+      },
+    ]),
     AutoImport({
       resolvers: [ElementPlusResolver()],
     }),

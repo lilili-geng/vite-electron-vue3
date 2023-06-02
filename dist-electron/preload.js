@@ -1,0 +1,1 @@
+"use strict";window.addEventListener("DOMContentLoaded",()=>{const t=(e,o)=>{const n=document.getElementById(e);n&&(n.innerText=o)};for(const e of["chrome","node","electron"])t(`${e}-version`,process.versions[e])});

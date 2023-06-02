@@ -44,7 +44,6 @@ const service = axios.create({
 // 请求前的统一处理
 service.interceptors.request.use(
   (config) => {
-    console.log(config);
     // if (config.loading) {
     //   loadingInstance  = ElLoading.service()
     // }\
@@ -62,15 +61,15 @@ service.interceptors.request.use(
 
 service.interceptors.response.use(
   (response) => {
-    if (loadingInstance) {
-      loadingInstance.close();
-    }
-    if (response.config.closeResponseInterceptors) {
-      return response;
-    }
+    // if (loadingInstance) {
+    //   loadingInstance.close();
+    // }
+    // if (response.config.closeResponseInterceptors) {
+    //   return response;
+    // }
     const res = response.data;
-    if (res.code === "00000") {
-      return res.data;
+    if (res.code == "200") {
+      return res;
     } else {
       showError(res);
       return Promise.reject(res);
@@ -128,8 +127,8 @@ export const requestApi = (url: string): ReqInfo => {
     url: baseURL + url,
     headers: {
       timeout,
-        // Authorization: getToken(),
-        Authorization: "",
+      // Authorization: getToken(),
+      Authorization: "",
       "Content-Type": "application/x-www-form-urlencoded",
     },
   };
