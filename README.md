@@ -1,4 +1,4 @@
-# Vue 3 + TypeScript + Vite 使用教程
+# Vue 3 + TypeScript + Vite Electron 使用教程
 
 这个模板帮助你快速启动一个基于 Vue 3 和 TypeScript 的项目，结合 Vite 进行开发，适用于 Electron 应用的开发。它集成了现代前端开发的最佳实践，帮助你提升开发效率和项目维护性。
 
