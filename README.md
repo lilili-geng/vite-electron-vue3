@@ -1,19 +1,19 @@
-# Vue 3 + TypeScript + Vite
+# Vue 3 + TypeScript + Vite 使用教程
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+这个模板帮助你快速启动一个基于 Vue 3 和 TypeScript 的项目，结合 Vite 进行开发，适用于 Electron 应用的开发。它集成了现代前端开发的最佳实践，帮助你提升开发效率和项目维护性。
 
-# 使用教程
+## 环境要求
 
-git clone https://github.com/lilili-geng/vite-electron-vue3/edit/master
+在开始之前，请确保你已经安装了以下软件：
 
-拉取依赖 yarn || yarn add 
+- **Node.js**: 推荐使用 `v16.x` 或更高版本。你可以从 [Node.js 官网](https://nodejs.org/) 下载并安装。
+- **yarn**: 推荐使用 `yarn` 作为包管理工具。若没有安装，请先安装 [Yarn](https://classic.yarnpkg.com/en/docs/install/)。
 
-开发环境 yarn run dev
+## 快速开始
 
-根据电脑环境打包 yarn run build 
+### 1. 克隆项目模板
 
-window打包 yarn run build:win
+首先，通过 `git` 克隆项目模板：
 
-其余配置通过electron-builder查看https://www.electron.build/
-
-
+```bash
+git clone https://github.com/lilili-geng/vite-electron-vue3.git
